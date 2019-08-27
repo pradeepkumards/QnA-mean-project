@@ -1,0 +1,80 @@
+version: '3'
+
+# volumes:
+#   dbData: null
+    
+networks:
+  qna_app_frontend_br:
+    driver: bridge
+
+services:
+  # qnaappmongodb:
+  #   container_name: qnaappmongodb
+  #   image: mvertes/alpine-mongo:latest
+  #   volumes:
+  #     - ../dbData/mongo:/data/db
+  #   expose:
+  #     - 27017
+  #   ports:
+  #     - "27017:27017"
+  #   networks:
+  #     - qna_app_br
+
+  mean-qna-frontend-app:
+    container_name: mean-qna-frontend-app
+    image: mean-qna-frontened-app:1.0.0
+    build: ./    
+    expose:
+      - 4200
+    ports:
+      - 4200:4200
+    # depends_on:
+    #   - qnaappmongodb
+    # links:
+    #   - qnaappmongodb
+    # environment:
+    #   - MONGO_URL = 'mongodb://qnaappmongodb:27017/QNADB'
+    networks:
+      - qna_app_frontend_br
+    entrypoint:
+      - ./docker-entrypoint.sh
+      - 'mean-qna-frontend-app'
+      # - '0.0.0.0'
+      - '4200'
+      - 'npm start'
+
+#  mean-notes-reminder:
+#    container_name: mean-notes-reminder
+#    image: mean-notes-reminder:1.0.0
+#    build: ./
+#    depends_on:
+#      - qnaappmongodb
+#    links:
+#      - qnaappmongodb
+#    environment:
+#      - MONGO_URL = 'mongodb://qnaappmongodb:27017/QNADB'
+#    networks:
+#      - qna_app_br
+#    entrypoint:
+#      - ./docker-entrypoint.sh
+#      - 'qnaappmongodb'
+#      - '27017'
+#      - 'npm run work'
+#
+#  mean-notes-notify:
+#    container_name: mean-notes-notify
+#    image: mean-notes-notify:1.0.0
+#    build: ./
+#    depends_on:
+#      - qnaappmongodb
+#    links:
+#      - qnaappmongodb
+#    environment:
+#      - MONGO_URL = 'mongodb://qnaappmongodb:27017/QNADB'
+#    networks:
+#      - qna_app_br
+#    entrypoint:
+#      - ./docker-entrypoint.sh
+#      - 'qnaappmongodb'
+#      - '27017'
+#      - 'npm run notify'

@@ -1,0 +1,10 @@
+.error-message{
+color: red;
+};
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+    padding: inherit;
+}

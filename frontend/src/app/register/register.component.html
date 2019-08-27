@@ -1,0 +1,28 @@
+<div class="container container-fluid">
+    <form name="loginForm" (ngSubmit)="registerSubmit()">
+        <div class="col-md-3">
+             <div class="form-group" >
+               <h2>Register</h2>
+             </div>
+            <label class="error-message">{{submitMessage}}</label>
+            <div class="form-group">
+                <label for="txtUserName">User Name</label>
+                <input type="text" [formControl]="username" id="txtUserName" class="form-control username" placeholder="user name">
+                <small *ngIf='(username.touched || username.dirty) && username.invalid' class='error-message'>user name is required field*</small>
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Password</label>
+                <input type="password" [formControl]="password" id="txtPassword" class="form-control password" placeholder="password">
+                <small *ngIf='(password.touched || password.dirty) && password.invalid' class='error-message'>password is required(min 6 char) field*</small>
+            </div>
+            <div class="form-group">
+                <label for="txtemailid">Email Id</label>
+                <input type="text" [formControl]="emailid" id="txtemailid" class="form-control emailid" placeholder="email id">
+                <small *ngIf='(emailid.touched || emailid.dirty) && emailid.invalid' class='error-message'>email id is required field*</small>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnSubmit" [disabled]="username.invalid || password.invalid || emailid.invalid" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,131 @@
+.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .example-myevents {
+    width: 300px;
+    height: 200px;
+    overflow: auto;
+    border: 1px solid #555;
+  }
+  
+  .sidebar {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0;
+    left: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+  }
+  
+  /* The sidebar links */
+  .sidebar a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidebar a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidebar .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* The button used to open the sidebar */
+  .openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+  
+  .openbtn:hover {
+    background-color: #444;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s; /* If you want a transition effect */
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidebar {padding-top: 15px;}
+    .sidebar a {font-size: 18px;}
+  }
+
+.mat-drawer{
+background-color: aliceblue;
+}
+  mat-sidenav.mat-drawer.mat-sidenav.ng-tns-c3-0.ng-trigger.ng-trigger-transform.mat-drawer-side.ng-star-inserted[_ngcontent-c1] {
+    
+    width: 200px;
+    word-wrap: break-word;
+}
+
+
+.mat-drawer-content {
+  background-color: #f5f5f5;
+}
+
+
+.example-card {
+  max-width: 800px;
+}
+
+.example-header-image {
+  /* background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg'); */
+  background-image: url('http://iluvesports.com/wp-content/uploads/2015/02/40-Insane-Arnold-Schwarzenegger-Bodybuilding-Pictures2.jpg');
+  /* background-image: url('file:///C:/Users/623731/Pictures/Saved%20Pictures/DSC_0576141.jpg'); */
+  background-size: cover;
+}
+
+.mat-card:not([class*=mat-elevation-z]) {
+  /* box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12); */
+}
+
+.mat-card[_ngcontent-c1] {
+  transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+  display: inline;
+  position: relative;
+  padding: 24px;
+  border-radius: 2px;
+  box-sizing: content-box;
+}
+.mat-list, .mat-nav-list, .mat-selection-list {
+  padding-top: 8px;
+  display: grid;
+  -webkit-tap-highlight-color: transparent;
+  font-size: inherit;
+  word-break: break-word;
+}
+
+/* .mat-list .mat-list-item .mat-list-text>*, .mat-list .mat-list-option .mat-list-text>*, .mat-nav-list .mat-list-item .mat-list-text>*, .mat-nav-list .mat-list-option .mat-list-text>*, .mat-selection-list .mat-list-item .mat-list-text>*, .mat-selection-list .mat-list-option .mat-list-text>* {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: inherit;
+  word-break: break-word;
+} */

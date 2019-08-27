@@ -1,0 +1,35 @@
+<app-header></app-header>
+
+
+<div class="container">
+  <br>  <br>  <br>
+  <div class="row">
+    <div class="col-100" class="row=100">
+      <button style="float: right;" type="button" class="btn btn-default" (click)="resetFunc(); form.reset()">
+        <strong>X</strong>
+        </button>
+      <div class="jumbotron">
+        <h5>{{res}}</h5>
+        <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
+          <div class="form-group">
+            <label for="title">Ask something</label>
+            <textarea type="text"  class="form-control" 
+            formControlName="title" 
+            [ngClass]="{'is-invalid':form.get('title').touched && form.get('title').invalid}" 
+            required 
+            rows="5" cols="100">
+            </textarea>
+            <div class="invalid-feedback">
+              <div>try asking</div>
+            </div>
+          </div>
+            <div class="form-group">
+            <button  style="float: right;" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+            <!--<button  style="float: right;" class="btn btn-primary" >Close</button>-->
+            <!--<button style="float: top;" type="button" class="btn btn-primary" (click)="resetFunc(); form.reset()">Close</button>-->
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

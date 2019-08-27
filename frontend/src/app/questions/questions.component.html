@@ -1,0 +1,56 @@
+<app-header></app-header>
+
+<app-topics></app-topics>
+
+<div  >
+  <br><br>
+      <div class="mybtn btn-sm">
+         
+      <button style="float: right;color: red" pmd-btn-fab type="button" class="btn btn-primary btn-sm" routerLinkActive="active"  [routerLink]="['/addquestion', topicid]">
+      <strong>Ask Question</strong></button>
+      </div>   
+       <!--<br><br>-->
+      <div  *ngFor="let q of listquestions" class="mycontainer">
+          <mat-list >
+              <mat-card class="example-card" class="card-container">
+                <p class="mytext ">
+                  <img src="../assets/{{q.userId}}.jpg" alt="Avatar" class="avatar">
+                {{q.userId}} 
+                </p>
+
+                  <mat-card-content>
+                    <a routerLinkActive="active"  [routerLink]="['/answers',q.groupId]">  
+                       
+                      {{q.title}}
+                                      
+                    </a>
+                    
+                    <mat-card-actions>
+<div>
+
+<button style="float: right;" type="button" class="btn btn-info btn-sm" routerLinkActive="active"  [routerLink]="['/addanswer',q.groupId]">
+  Write answer</button>
+  
+<button style="float: right;" type="button"  class="btn btn-info btn-sm delete" (click)="delQuestion(q.groupId)">
+  delete</button>
+</div>
+<!-- modal end -->
+
+                    </mat-card-actions>
+                  </mat-card-content>
+                  <p class="mydate">
+                 {{q.createdOn}}
+                  </p>
+                </mat-card>
+                
+             </mat-list>
+            </div>
+
+    </div>
+
+
+
+    <p>
+       <router-outlet>
+        </router-outlet>
+    </p>

@@ -1,0 +1,26 @@
+
+
+<div class="container container-fluid">
+    <form name="loginForm" (ngSubmit)="loginSubmit()">
+        <div class="col-md-3">
+            <div class="form-group">
+               <h2>Login</h2>
+             </div>
+            <label class="error-message">{{submitMessage}}</label>
+            <div class="form-group">
+                <label for="txtUserName">User Name</label>
+                <input type="text" [formControl]="username" id="txtUserName" class="form-control username" placeholder="user name">
+                <small *ngIf='(username.touched || username.dirty) && username.invalid' class='error-message'>user name is required field*</small>
+            </div>
+            <div class="form-group">
+                <label for="txtPassword">Password</label>
+                <input type="password" [formControl]="password" id="txtPassword" class="form-control password" placeholder="password">
+                <small *ngIf='(password.touched || password.dirty) && password.invalid' class='error-message'>password is required(min 6 char) field*</small>
+            </div>
+            <div class="form-group">
+                <button type="submit" name="btnSubmit" [disabled]="username.invalid || password.invalid" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+     <a routerLink="/register" >Register</a>
+</div>
